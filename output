@@ -1,0 +1,48 @@
+abhayk@Indu:~/Desktop/Workshop/tcn5080$ make
+g++    -c -o utility.o utility.cpp
+g++    -c -o des.o des.cpp
+g++    -c -o tcn5080project1.o tcn5080project1.cpp
+g++ -o sdes utility.o des.o tcn5080project1.o -I.
+abhayk@Indu:~/Desktop/Workshop/tcn5080$ ./sdes encrypt 0111111101 10101010 plaintext_file ciphertext_file
+INFO: Main func: user inputs are: 
+Encrypt\Decrypt: encrypt
+initial key:	0111111101 
+initial Vector	10101010
+plain text file name	plaintext_file
+cipher text file name 	ciphertext_file
+DEBUG: Main func: user input task is to encrpyt the binary text
+INFO: Utility Class: Binary plain text: 00000001 00100011
+DEBUG: Main func: first block of 8 bits of plain text: 00000001
+DEBUG: Main func: second block of 8 bits of plain text: 00100011
+RESULT: des:generateRoundKeys: k1 01011111
+RESULT: des:generateRoundKeys: k2 11111100
+================== SIMPLE S-DES Encrypt ==================
+Encryption Simplified S-DES for 00000001 00100011 is 01001101 01001011
+==================== CBC S-DES Encrypt ===================
+CBC S-DES C1 is 11110100
+CBC S-DES C2 is 00001011
+Encryption Simplified S-DES for 00000001 00100011 is 11110100 00001011
+=========================================================
+abhayk@Indu:~/Desktop/Workshop/tcn5080$ ./sdes decrypt 0111111101 10101010 plaintext_file ciphertext_file
+INFO: Main func: user inputs are: 
+Encrypt\Decrypt: decrypt
+initial key:	0111111101 
+initial Vector	10101010
+plain text file name	plaintext_file
+cipher text file name 	ciphertext_file
+DEBUG: Main func: user input task is to decrpyt the binary text
+INFO: Utility Class: Binary cipher text: 11110100 00001011
+DEBUG: Main func: first block of 8 bits of cipher text: 11110100
+DEBUG: Main func: second block of 8 bits of cipher text: 00001011
+RESULT: des:generateRoundKeys: k1 01011111
+RESULT: des:generateRoundKeys: k2 11111100
+================== SIMPLE S-DES Decrypt ==================
+Decryption Simplified S-DES for 11110100 00001011 is 10101011 11010111
+==================== CBC S-DES Decrypt ===================
+CBC S-DES C1 is 00000001
+CBC S-DES C2 is 00100011
+Decryption Simplified S-DES for 11110100 00001011 is 00000001 00100011
+==========================================================
+abhayk@Indu:~/Desktop/Workshop/tcn5080$ 
+
+
