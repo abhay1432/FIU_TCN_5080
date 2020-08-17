@@ -1,5 +1,5 @@
 ## About
-Academic project for TCN 5080 at Florida International University
+Academic project for TCN 5080 at Florida International University for semester of FALL 2016
 
 ## Project Description
 Create a program to encrypt and decrypt binary files using S-DES (Simplified DES) in the
